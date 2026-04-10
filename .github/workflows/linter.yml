@@ -27,7 +27,7 @@ jobs:
       # Checkout the code base #
       ##########################
       - name: Checking-out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
@@ -43,3 +43,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: ./.github/linters/
           JAVA_FILE_NAME: google_checks.xml
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
